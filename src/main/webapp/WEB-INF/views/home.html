@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Settings</h1>
+<form th:action="@{/submit}" th:object="${email}" method="post">
+    <label>Languages</label>
+    <select th:field="*{language}">
+        <option th:value="${'eng'}">English</option>
+        <option th:value="${'vn'}">Vietnamese</option>
+        <option th:value="${'jp'}">Japanese</option>
+        <option th:value="${'cn'}">Chinese</option>
+    </select>
+    <br>
+    <label>Page Size:</label>
+    <select th:field="*{pageSize}">
+        <option th:value="${5}">5</option>
+        <option th:value="${10}">10</option>
+        <option th:value="${15}">15</option>
+        <option th:value="${25}">25</option>
+        <option th:value="${50}">50</option>
+        <option th:value="${100}">100</option>
+    </select>
+    <br>
+    <label>Spam filter:</label>
+    <input type="checkbox" th:field="*{spamsFillter}">
+    <label>Enable spams filter</label><br>
+    <label>Signaure</label>
+    <input type="text" th:field="*{signature}">
+    <br>
+    <input type="submit" value="submit">
+<!--    <br>-->
+<!--    <label th:field="*{language}"></label>-->
+<!--    <label th:field="*{pageSize}"></label>-->
+<!--    <label th:field="*{spamsFillter}"></label>-->
+<!--    <label th:field="*{signature}"></label>-->
+
+</form>
+</body>
+</html>
